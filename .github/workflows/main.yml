@@ -1,6 +1,6 @@
 name: Merge Request approval
 
-on: pull_request_review
+on: merge_group
 
 jobs:
   build:
