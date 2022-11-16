@@ -1,0 +1,14 @@
+name: merge-request-approve 
+on:
+  push:
+    branches: [ sprint/** ]
+    jobs:
+  build:
+    runs-on: ubuntu-latest
+  actions: 
+ - action: "Send notification to MS Teams"
+  type: "MICROSOFT_TEAMS"
+  title: "$title"
+  content: "[#$BUDDY_EXECUTION_ID] $BUDDY_PIPELINE_NAME execution by [$BUDDY_INVOKER_NAME]($BUDDY_INVOKER_URL)"
+  send_as_html: true
+  recipients: "example@example.com"
